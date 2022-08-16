@@ -3,17 +3,17 @@ import Accordion from './Accordion';
 
 const items = [
     {
-        id: 1,
+        id: 0,
         title: 'What is React?',
         content: 'React is a Front-end JavaScript library'
     },
     {
-        id: 2,
+        id: 1,
         title: 'Why use React?',
         content: 'React is a favorite JS library among engineers'
     },
     {
-        id: 3,
+        id: 2,
         title: 'How do you use React?',
         content: 'We use React to create components'
     }
