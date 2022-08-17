@@ -1,11 +1,12 @@
 import React from 'react';
-import Accordion from './Accordion';
+import Accordion from './components/Accordion';
+import Search from './components/Search';
 
 const items = [
     {
         id: 0,
         title: 'What is React?',
-        content: 'React is a Front-end JavaScript library'
+        content: 'React is a Front-end JavaScript library. It is used to show content to users and handles user events'
     },
     {
         id: 1,
@@ -23,7 +24,8 @@ const items = [
 const App = () => {
     return (
         <div style={{padding: '2em'}}>
-            <Accordion items={items} />
+            {/* <Accordion items={items} /> */}
+            <Search />
         </div>
     )
 };
