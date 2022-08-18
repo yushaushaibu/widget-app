@@ -20,21 +20,31 @@ const Search = () => {
             setResults(data.query.search);
         }
 
-        const timeoutId = setTimeout(() => {
-            if (term) {
-                search();
+        if (term && !results.length) {
+            search();
+        } else {
+            const timeoutId = setTimeout(() => {
+                if (term) {
+                    search();
+                }
+            }, 1000);
+    
+            // The optional 'clean up' function
+            return () => {
+                clearTimeout(timeoutId)
             }
-        }, 500);
+        }
+
     }, [term])
 
-    // CLEAN UP IN useEffect()
     // useEffect(() => {
-    //     console.log('Initial render or term was changed')
-    //     return () => {
-    //         console.log('CLEAN UP')
-    //     }
-    // }, [term]);
+    //         console.log('Initial render or when term changes')
+    //         return () => {
+    //             console.log('CLEAN UP')
+    //         }
+    // }, [term])
 
+   
     const renderedResults = results.map((result) => {
         return (
             <div className='item' key={result.pageid}>
