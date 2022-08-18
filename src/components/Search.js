@@ -19,12 +19,21 @@ const Search = () => {
 
             setResults(data.query.search);
         }
-        
-        if (term) {
-            search();
-        }
 
+        const timeoutId = setTimeout(() => {
+            if (term) {
+                search();
+            }
+        }, 500);
     }, [term])
+
+    // CLEAN UP IN useEffect()
+    // useEffect(() => {
+    //     console.log('Initial render or term was changed')
+    //     return () => {
+    //         console.log('CLEAN UP')
+    //     }
+    // }, [term]);
 
     const renderedResults = results.map((result) => {
         return (
